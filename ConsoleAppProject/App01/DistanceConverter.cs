@@ -35,11 +35,13 @@ namespace ConsoleAppProject.App01
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine();
-            Console.WriteLine(" ========================");
-            Console.WriteLine("    Distance Converter   ");
-            Console.WriteLine("        by Derek         ");
-            Console.WriteLine(" ========================");
+            Console.WriteLine("   ========================");
+            Console.WriteLine("    Distance Converter     ");
+            Console.WriteLine("        by Jesse Mwansa    ");
+            Console.WriteLine("   ========================");
             Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private void OutputFeet()
