@@ -14,8 +14,9 @@ namespace UnitTests
             StudentGrades app03 = new StudentGrades();
 
             // Act
+            Grades grades = app03.ConvertToGrades(39);
+            Grades actualGrade = grades;
 
-            Grades actualGrade = app03.ConvertToGrades(39);
 
             //
 

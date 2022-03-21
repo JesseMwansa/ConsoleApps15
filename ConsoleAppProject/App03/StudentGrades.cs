@@ -16,8 +16,19 @@ namespace ConsoleAppProject.App03
         public const int MIN_C = 50;
         public const int MIN_B = 60;
         public const int MIN_A = 70;
+        public const int HighestMark = 100;
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
+
+        public int[] GradeProfile { get; set; }
+
+        public double Mean { get; set; }
+        
+        public int Minimum { get; set; }
+
+        public int Maximum { get; set; }
+
+        public int Total { get; set; }
 
         public void Run()
         {
@@ -25,9 +36,19 @@ namespace ConsoleAppProject.App03
             Marks = new int[Students.Length];
             ConsoleHelper.OutputHeading("App03 Student Marks");
 
+            GradeProfile = new int[(int)Grades.A + 1];
+
+            Marks = new int[]
+            {
+                80, 55, 42, 34, 63, 78, 91, 9, 57, 13
+            };
+
             InputMarks();
             //ConvertToGrades();
             OutputGrades();
+            CalculateStats();
+            CalculateGradeProfile();
+            OutputGradeProfile();
         }
 
         private void InputMarks()
@@ -54,9 +75,83 @@ namespace ConsoleAppProject.App03
 
         public Grades ConvertToGrades(int mark)
         {
-            if (mark >= 0 && mark <= MIN_D-1)
+            if (mark >= 0 && mark < MIN_D )
+            {
                 return Grades.F;
-            else return Grades.X;
+            }
+
+            else if (mark <= MIN_D && mark < MIN_C)
+            {
+                return Grades.D;
+            }
+
+            else if (mark <= MIN_C && mark < MIN_B)
+            {
+                return Grades.C;
+            }
+
+            else if (mark <= MIN_B && mark < MIN_A)
+            {
+                return Grades.B;
+            }
+
+            else if (mark <= MIN_A && mark <= HighestMark)
+            {
+                return Grades.A;
+            }
         }
+
+        public void CalculateStats ()
+        {
+            double total = 0;
+
+            Minimum = HighestMark;
+            Maximum = 0;
+
+            foreach (int mark in Marks)
+            {
+                total += mark;
+                if (mark > Maximum) Maximum = mark;
+                if (mark < Minimum) Minimum = mark;
+            }
+
+            Mean = total / Marks.Length;
+
+            Console.WriteLine($"Mean = {Mean} Min = {Minimum} Max = {Maximum}");
+        }
+
+        public void CalculateGradeProfile()
+        {
+            for(int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+
+            foreach(int mark in Marks)
+            {
+                Grades grade = ConvertToGrades(mark);
+                GradeProfile[(int)grade]++; 
+            }
+
+            OutputGradeProfile();
+         
+        }
+
+        private void OutputGradeProfile()
+        {
+            Grades grade = Grades.X;
+            Console.WriteLine();
+
+            foreach(int count in GradeProfile)
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grade {grade} {percentage}% Count {count}");
+                grade++;
+            }
+
+            Console.WriteLine();
+
+        }
+
     }
 }
