@@ -32,7 +32,8 @@ namespace ConsoleAppProject
                 {
                   "App01 Distance Converter",
                   "App02 BMI Calculator",
-                  "App03 Student Grades"
+                  "App03 Student Grades",
+                  "App04 Social Network"
                 };
 
             Console.WriteLine("Please choose your app\n");

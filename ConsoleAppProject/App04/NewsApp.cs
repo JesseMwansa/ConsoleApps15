@@ -6,7 +6,8 @@ namespace ConsoleAppProject.App04
 {
     public class NewsApp
     {
-        public NewsList NewsList { get; set; }
+        public NewsList NewsList { get; set; } = new NewsList();
+        
         string[] choices =
         {
             "Add a Message Post",
@@ -17,6 +18,7 @@ namespace ConsoleAppProject.App04
             "Like a post",
             "Unlike a post",
         };
+        
         public void Run()
         {
             AddMessage();
