@@ -1,5 +1,5 @@
 using System;
-using System Collections.Generic;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleAppProject.App04
@@ -16,7 +16,7 @@ namespace ConsoleAppProject.App04
             "Add comments to a post",
             "Like a post",
             "Unlike a post",
-        }
+        };
         public void Run()
         {
             AddMessage();
@@ -26,10 +26,10 @@ namespace ConsoleAppProject.App04
         {
 
             Console.WriteLine("Please enter your name >");
-            string name = ConsoleAppProject.ReadLine();
+            string name = Console.ReadLine();
 
             Console.WriteLine("Please enter your messaage >");
-            string message = ConsoleAppProject.ReadLine();
+            string message = Console.ReadLine();
 
             MessagePost post = new MessagePost(name, message);
             NewsList.AddPost(post);
@@ -37,3 +37,4 @@ namespace ConsoleAppProject.App04
 
 
     }
+}

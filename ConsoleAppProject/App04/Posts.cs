@@ -1,5 +1,5 @@
 using System;
-using System Collections.Generic;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleAppProject.App04
@@ -10,7 +10,7 @@ namespace ConsoleAppProject.App04
         private readonly List<String> comments;
 
         // username of the post's author
-        public string Author { get; }
+        public string Author { get; set; }
 
         public DateTime Timestamp { get; }
 
@@ -63,7 +63,7 @@ namespace ConsoleAppProject.App04
         public void Display()
         {
             Console.WriteLine();
-            Console.WriteLine($"    Author: {Username}");
+            Console.WriteLine($"    Author: {Author}");
 
             Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
             Console.WriteLine();

@@ -1,5 +1,6 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -52,9 +53,8 @@ namespace ConsoleAppProject
                     app03.Run();
                     break;
 
-                case 3: NewsApp app04 = new NewsApp(); app04.Run();
-                    break   
-
+                case 4: NewsApp app04 = new NewsApp(); app04.Run();
+                    break;   
 
             }
         }

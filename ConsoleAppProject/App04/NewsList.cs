@@ -20,9 +20,8 @@ namespace ConsoleAppProject.App04
     ///</author> 
     public class NewsList
     {
-        private readonly List<Post> PostList {  get; set};
+        public List<Post> PostList { get; set; }
         
-
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
@@ -53,7 +52,7 @@ namespace ConsoleAppProject.App04
             // display all text posts
             foreach (Post post in PostList)
             {
-                message.Display();
+                post.Display();
                 Console.WriteLine();   // empty line between posts
             }
 

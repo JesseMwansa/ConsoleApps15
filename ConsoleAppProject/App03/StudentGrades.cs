@@ -75,7 +75,7 @@ namespace ConsoleAppProject.App03
 
         public Grades ConvertToGrades(int mark)
         {
-            if (mark >= 0 && mark < MIN_D )
+            if (mark >= 0 && mark < MIN_D)
             {
                 return Grades.F;
             }
@@ -99,6 +99,7 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.A;
             }
+            else return Grades.X;
         }
 
         public void CalculateStats ()
