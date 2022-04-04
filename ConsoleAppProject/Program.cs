@@ -52,7 +52,8 @@ namespace ConsoleAppProject
                     app03.Run();
                     break;
 
-                    
+                case 3: NewsApp app04 = new NewsApp(); app04.Run();
+                    break   
 
 
             }
