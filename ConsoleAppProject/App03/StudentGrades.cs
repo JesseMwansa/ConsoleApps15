@@ -99,6 +99,8 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.A;
             }
+
+            return Grades.X;
         }
 
         public void CalculateStats ()
