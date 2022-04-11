@@ -2,6 +2,7 @@
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.App04;
+using ConsoleAppProject.App06;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -34,7 +35,8 @@ namespace ConsoleAppProject
                   "App01 Distance Converter",
                   "App02 BMI Calculator",
                   "App03 Student Grades",
-                  "App04 Social Network"
+                  "App04 Social Network",
+                  "App06 RPS Game"
                 };
 
             Console.WriteLine("Please choose your app\n");
@@ -59,9 +61,11 @@ namespace ConsoleAppProject
                     break;
 
                 case 4: NewsApp app04 = new NewsApp(); app04.Run();
-                    break;   
+                    break;
 
-
+                case 5: Game app06 = new Game();
+                    app06.Run();
+                    break;
             }
         }
     }
